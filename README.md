@@ -10,11 +10,11 @@ The system runs as an event-driven Finite State Machine operating across three d
 * **ALARM:** Threat detected. RGB LED flashes Red alternating with a 1kHz Piezo buzzer alert using a non-blocking execution model.
 
 ### System Block Diagram
-
+```text
   [ PIR Sensor (Digital Pin 2) ] ----(Hardware Interrupt)----> [                  ] ----> [ 16x2 I2C LCD (Status Display) ]
   [ Push Button (Digital Pin 3) ] ---(Software Debounced)----> [   Arduino Uno    ] ----> [ RGB LED (Visual Alarm Pins 9,10,11) ]
   [ Photoresistor (Analog Pin A0) ] -(Analog Threshold Check)-> [  (ATmega328P)   ] ----> [ Piezo Buzzer (Audio Alert Pin 8) ]
-
+```
 ### Component	: Purpose	; Technical Justification
 
 Arduino Uno :	Microcontroller Core	; Coordinates system logic, captures external asynchronous triggers, and processes state updates.
